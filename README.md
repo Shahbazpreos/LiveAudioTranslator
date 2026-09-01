@@ -1,752 +1,402 @@
-\# 🎧 Live Audio Translator
+# 🎧 Live Audio Translator
 
+**Real-time system audio transcription and translation for Windows 11**
 
+## 🖥️ Application Preview
 
-\*\*Real-time system audio transcription and translation for Windows 11\*\*
+![Live Audio Translator Screenshot](screenshot.png)
 
+Live Audio Translator is a lightweight desktop application designed to capture audio playing on a Windows computer, transcribe speech in real time, and translate it into a selected language.
 
+Whether the audio comes from **YouTube, a web browser, a media player, a meeting application, or another desktop program**, Live Audio Translator is designed to listen directly to the system audio stream rather than requiring a microphone.
 
-Live Audio Translator is a lightweight desktop application designed to capture audio playing on a Windows computer, transcribe the speech in real time, and translate it into a selected language.
+> **Developer:** Shabbi :)
 
+---
 
-
-Whether the audio comes from \*\*YouTube, a web browser, a media player, a meeting application, or another desktop program\*\*, Live Audio Translator is designed to listen directly to the system audio stream rather than requiring a microphone.
-
-
-
-> \*\*Developer:\*\* Shabbi :)
-
-
-
-\---
-
-
-
-\## 🚀 Project Overview
-
-
+## 🚀 Project Overview
 
 The goal of Live Audio Translator is simple:
 
-
-
-\*\*System Audio → Speech Recognition → Translation → Live On-Screen Text\*\*
-
-
+**System Audio → Speech Recognition → Translation → Live On-Screen Text**
 
 Instead of manually uploading recordings or copying subtitles into a translator, the application aims to provide live translated text while audio is playing on the computer.
 
+The project currently focuses on **Windows 11** and uses Windows audio loopback capture to access system playback audio.
 
+---
 
-The project currently focuses on \*\*Windows 11\*\* and uses Windows audio loopback capture to access system playback audio.
+## ✨ Features
 
+- 🎧 Captures Windows system audio
+- 🎙️ No microphone required for system-audio translation
+- 📝 Live speech-to-text transcription
+- 🌐 Real-time translation
+- 📴 Offline speech-recognition support
+- 🖥️ Simple desktop graphical interface
+- 🔄 Start/Stop translation controls
+- 📊 Live application status indicator
+- 📜 Separate source and translated text areas
+- 🎯 Designed for Windows 11
+- 📦 Standalone Windows build support
+- 🛠️ Windows installer support
 
+---
 
-\---
-
-
-
-\## ✨ Features
-
-
-
-\* 🎧 Captures Windows system audio
-
-\* 🎙️ No microphone required for system-audio translation
-
-\* 📝 Live speech-to-text transcription
-
-\* 🌐 Real-time translation
-
-\* 📴 Offline speech-recognition support
-
-\* 🖥️ Simple desktop graphical interface
-
-\* 🔄 Start/Stop translation controls
-
-\* 📊 Live application status indicator
-
-\* 📜 Separate source and translated text areas
-
-\* 🎯 Designed for Windows 11
-
-\* 📦 Standalone Windows build support
-
-\* 🛠️ Windows installer support
-
-
-
-\---
-
-
-
-\## 🧠 How It Works
-
-
+## 🧠 How It Works
 
 Live Audio Translator follows a simple processing pipeline:
 
-
-
 ```text
-
 Windows System Audio
-
-&#x20;       │
-
-&#x20;       ▼
-
+        │
+        ▼
 Audio Loopback Capture
-
-&#x20;       │
-
-&#x20;       ▼
-
+        │
+        ▼
 Speech Recognition
-
-&#x20;       │
-
-&#x20;       ▼
-
+        │
+        ▼
 Source-Language Text
-
-&#x20;       │
-
-&#x20;       ▼
-
+        │
+        ▼
 Translation Engine
-
-&#x20;       │
-
-&#x20;       ▼
-
+        │
+        ▼
 Translated Text
-
-&#x20;       │
-
-&#x20;       ▼
-
+        │
+        ▼
 Desktop GUI
-
 ```
-
-
 
 For example:
 
-
-
 ```text
-
 YouTube / Browser / Application
-
-&#x20;             ↓
-
-&#x20;       System Audio
-
-&#x20;             ↓
-
-&#x20;     Live Audio Translator
-
-&#x20;             ↓
-
-&#x20;    Speech Recognition
-
-&#x20;             ↓
-
-&#x20;         Translation
-
-&#x20;             ↓
-
-&#x20;     Live Translated Text
-
+              ↓
+        System Audio
+              ↓
+     Live Audio Translator
+              ↓
+      Speech Recognition
+              ↓
+          Translation
+              ↓
+      Live Translated Text
 ```
 
+---
 
-
-\---
-
-
-
-\## 🖥️ Application Interface
-
-
+## 🖥️ Application Interface
 
 The desktop interface provides:
 
-
-
-\* Translation language selection
-
-\* Start/Stop controls
-
-\* Application status
-
-\* Source transcription
-
-\* Translated output
-
-\* Real-time processing information
-
-
+- Translation language selection
+- Start/Stop controls
+- Application status
+- Source transcription
+- Translated output
+- Real-time processing information
 
 The interface is designed to remain simple so the application can run alongside videos, meetings, streams, and other applications.
 
+---
 
-
-\---
-
-
-
-\## 🛠️ Technologies Used
-
-
+## 🛠️ Technologies Used
 
 The project is built primarily with:
 
+- **Python**
+- **Tkinter** — desktop graphical interface
+- **Windows WASAPI / Loopback Audio** — system audio capture
+- **faster-whisper** — speech recognition
+- **Transformers / MarianMT** — machine translation
+- **SoundCard** — Windows audio capture
+- **PyInstaller** — Windows executable packaging
+- **Inno Setup** — Windows installer creation
 
+Additional Python libraries are used for audio processing, text rendering, threading, system-tray integration, and application management.
 
-\* \*\*Python\*\*
+---
 
-\* \*\*Tkinter\*\* — desktop graphical interface
-
-\* \*\*Windows WASAPI / Loopback Audio\*\* — system audio capture
-
-\* \*\*Whisper-based speech recognition\*\*
-
-\* \*\*FFmpeg / audio-processing components\*\*
-
-\* \*\*PyInstaller\*\* — Windows executable packaging
-
-\* \*\*Inno Setup\*\* — Windows installer creation
-
-
-
-Additional Python libraries are used for audio processing, translation, threading, and application management.
-
-
-
-\---
-
-
-
-\## 📁 Project Structure
-
-
+## 📁 Project Structure
 
 ```text
-
-LiveAudioTranslator-Windows/
-
+LiveAudioTranslator/
 │
-
 ├── gui.py
-
 │   Main graphical user interface
-
 │
-
-├── live\_translate\_windows.py
-
+├── live_translate_windows.py
 │   Core live transcription and translation logic
-
 │
-
-├── test\_wasapi.py
-
+├── test_wasapi.py
 │   Windows audio-loopback testing
-
 │
-
-├── test\_whisper\_live.py
-
+├── test_whisper_live.py
 │   Live speech-recognition testing
-
 │
-
 ├── LiveAudioTranslator.spec
-
 │   PyInstaller build configuration
-
 │
-
 ├── LiveAudioTranslator-Debug.spec
-
 │   Debug build configuration
-
 │
-
 ├── installer.iss
-
 │   Inno Setup installer configuration
-
 │
-
 ├── LiveAudioTranslator.ico
-
 │   Application icon
-
 │
-
+├── requirements.txt
+│   Runtime Python dependencies
+│
+├── requirements-dev.txt
+│   Development and build dependencies
+│
+├── screenshot.png
+│   Application preview image
+│
 └── README.md
-
 ```
-
-
 
 Generated files, virtual environments, downloaded AI models, test recordings, build directories, and installer output are intentionally excluded from the Git repository.
 
+---
 
+## ⚙️ Requirements
 
-\---
+### Operating System
 
+- Windows 11 recommended
+- Compatible Windows audio output device
+- Internet connection may be required for initial model downloads
 
+### Development Environment
 
-\## ⚙️ Requirements
-
-
-
-\### Operating System
-
-
-
-\* Windows 11 recommended
-
-\* Windows audio output device capable of loopback capture
-
-
-
-\### Development Environment
-
-
-
-\* Python 3.x
-
-\* Required Python dependencies
-
-\* FFmpeg where required by the configured audio pipeline
-
-
+- Python 3.12 recommended
+- Python dependencies listed in `requirements.txt`
+- Development/build dependencies listed in `requirements-dev.txt`
 
 A virtual environment is recommended when running the project from source.
 
+---
 
-
-\---
-
-
-
-\## 🔧 Running From Source
-
-
+## 🔧 Running From Source
 
 Clone the repository:
 
-
-
 ```bash
-
-git clone <repository-url>
-
+git clone https://github.com/Shahbazpreos/LiveAudioTranslator.git
 ```
-
-
 
 Enter the project directory:
 
-
-
 ```bash
-
-cd LiveAudioTranslator-Windows
-
+cd LiveAudioTranslator
 ```
-
-
 
 Create a virtual environment:
 
-
-
 ```bash
-
 python -m venv .venv
-
 ```
 
-
-
-Activate it on Windows:
-
-
+Activate it in Windows PowerShell:
 
 ```powershell
-
-.\\.venv\\Scripts\\Activate.ps1
-
+.\.venv\Scripts\Activate.ps1
 ```
 
-
-
-Install the required dependencies once a `requirements.txt` file has been generated:
-
-
+Install the required dependencies:
 
 ```bash
-
 pip install -r requirements.txt
-
 ```
-
-
 
 Run the application:
 
-
-
 ```bash
-
 python gui.py
-
 ```
 
+> **Note:** PowerShell execution policies may prevent activation of the virtual environment on some systems. In that case, the application can be launched directly with:
+>
+> ```powershell
+> .\.venv\Scripts\python.exe .\gui.py
+> ```
 
+---
 
-\---
+## 📦 Building the Windows Application
 
+Install the development dependencies:
 
-
-\## 📦 Building the Windows Application
-
-
+```bash
+pip install -r requirements-dev.txt
+```
 
 The project includes PyInstaller configuration files for producing a standalone Windows build.
 
-
-
-Example:
-
-
+Build the application with:
 
 ```bash
-
 pyinstaller LiveAudioTranslator.spec
-
 ```
-
-
 
 The generated application will normally be placed inside:
 
-
-
 ```text
-
 dist/
-
 ```
 
+---
 
-
-\---
-
-
-
-\## 💿 Building the Installer
-
-
+## 💿 Building the Installer
 
 An Inno Setup configuration is included:
 
-
-
 ```text
-
 installer.iss
-
 ```
 
-
-
-Compile this script using \*\*Inno Setup 6\*\* after creating the PyInstaller build.
-
-
+After creating the PyInstaller build, compile `installer.iss` using **Inno Setup 6**.
 
 The resulting installer is generated separately from the Git repository because compiled builds and bundled AI models can be very large.
 
+---
 
+## 🧩 Why Large Files Aren't Stored in the Repository
 
-\---
+AI models, virtual environments, compiled applications, and test recordings can consume gigabytes of storage.
 
-
-
-\## 🧩 Why Large Files Aren't Stored in the Repository
-
-
-
-AI models and compiled application builds can consume gigabytes of storage.
-
-
-
-For that reason, the following are excluded from Git:
-
-
+For that reason, items such as the following are excluded from Git:
 
 ```text
-
 .venv/
-
 models/
-
 build/
-
 dist/
-
-installer\_output/
-
-\*.wav
-
+installer_output/
+*.wav
 ```
 
+This keeps the repository focused on the project's source code and makes it much easier to clone and contribute to.
 
+Compiled versions of the application can be distributed separately through GitHub Releases or another appropriate distribution method.
 
-This keeps the repository focused on the project's source code and makes it easier for developers to clone and contribute.
+---
 
-
-
-Future compiled releases can be distributed separately through the repository's \*\*Releases\*\* section where appropriate.
-
-
-
-\---
-
-
-
-\## 🗺️ Roadmap
-
-
+## 🗺️ Roadmap
 
 Possible future improvements include:
 
+- [ ] Additional translation languages
+- [ ] Improved translation latency
+- [ ] Automatic source-language detection
+- [ ] Subtitle-style overlay mode
+- [ ] Customizable fonts and interface settings
+- [ ] Translation history
+- [ ] Export translated transcripts
+- [ ] Better CPU and memory optimization
+- [ ] Additional Windows audio-device support
+- [ ] Automatic model management
+- [ ] Simplified installer downloads
+- [ ] Hotkey support
+- [ ] Improved error handling
 
+---
 
-\* \[ ] Additional translation languages
+## 🧪 Project Status
 
-\* \[ ] Improved translation latency
+**Current Status:** Early Development / Experimental
 
-\* \[ ] Automatic source-language detection
-
-\* \[ ] Subtitle-style overlay mode
-
-\* \[ ] Customizable fonts and interface settings
-
-\* \[ ] Translation history
-
-\* \[ ] Export translated transcripts
-
-\* \[ ] Better CPU and memory optimization
-
-\* \[ ] Additional Windows audio-device support
-
-\* \[ ] Automatic model management
-
-\* \[ ] Simplified installer downloads
-
-\* \[ ] Hotkey support
-
-\* \[ ] Improved error handling
-
-
-
-\---
-
-
-
-\## 🧪 Project Status
-
-
-
-\*\*Current Status:\*\* Early Development / Experimental
-
-
-
-The core Windows application has been successfully developed and packaged, but the project is still evolving.
-
-
+The core Windows application has been successfully developed, tested, packaged, and installed, but the project is still evolving.
 
 Bugs, performance issues, and translation inaccuracies may occur.
 
-
-
 Testing and improvements are ongoing.
 
+---
 
-
-\---
-
-
-
-\## 🤝 Contributing
-
-
+## 🤝 Contributing
 
 Contributions, suggestions, bug reports, and improvements are welcome.
 
-
-
 If you would like to contribute:
 
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Test your changes.
+5. Submit a pull request.
 
+For bugs or feature suggestions, please open a GitHub issue with as much relevant information as possible.
 
-1\. Fork the repository.
+---
 
-2\. Create a new branch.
-
-3\. Make your changes.
-
-4\. Test your changes.
-
-5\. Submit a pull request.
-
-
-
-For bugs or feature suggestions, please open an issue with as much relevant information as possible.
-
-
-
-\---
-
-
-
-\## ⚠️ Disclaimer
-
-
+## ⚠️ Disclaimer
 
 Live Audio Translator is an experimental project.
 
-
-
 Speech-recognition and machine-translation systems can produce incorrect or incomplete results. Translations should not be relied upon for medical, legal, emergency, financial, or other critical decisions without independent verification.
-
-
 
 Users are responsible for ensuring that their use of captured or translated audio complies with applicable laws, platform policies, privacy requirements, and content rights.
 
+---
 
+## 👨‍💻 Developer
 
-\---
-
-
-
-\## 👨‍💻 Developer
-
-
-
-\*\*Shabbi :)\*\*
-
-
+**Shabbi :)**
 
 Built while learning, experimenting, breaking things, fixing them again, and discovering how software actually makes its way from:
 
-
-
 ```text
-
 "Maybe I should build this..."
-
-&#x20;             ↓
-
+             ↓
 "Why isn't this working?"
-
-&#x20;             ↓
-
+             ↓
 "It works!"
-
-&#x20;             ↓
-
+             ↓
 "Why did it stop working?"
-
-&#x20;             ↓
-
+             ↓
 "It works again!"
-
-&#x20;             ↓
-
-&#x20;         GitHub 🚀
-
+             ↓
+         GitHub 🚀
 ```
 
-
-
-\### 🏆 Achievement Unlocked
-
-
+### 🏆 Achievement Unlocked
 
 ```text
-
 ╔══════════════════════════════════════╗
-
 ║        🏆 ACHIEVEMENT UNLOCKED      ║
-
 ║                                      ║
-
 ║          FIRST REPOSITORY            ║
-
 ║                                      ║
-
 ║   Survived dependency errors         ║
-
 ║   Survived audio debugging           ║
-
 ║   Survived packaging                 ║
-
 ║   Survived a 2+ GB installer         ║
-
 ║                                      ║
-
 ║        Welcome to Developer Land.    ║
-
 ║              🚀 💻 🎧               ║
-
 ╚══════════════════════════════════════╝
-
 ```
-
-
 
 Every developer has a first repository.
 
+**This is mine.**
 
+---
 
-\*\*This is mine.\*\*
-
-
-
-\---
-
-
-
-\## ⭐ Support the Project
-
-
+## ⭐ Support the Project
 
 If you find Live Audio Translator useful or interesting, consider giving the repository a ⭐.
 
-
-
 It helps the project grow and lets me know that someone other than me managed to make it work. 😄
 
+---
 
+**Live Audio Translator**
 
-\---
-
-
-
-\*\*Live Audio Translator\*\*
-
-
-
-\*Hear it. Understand it.\*
-
-
-
+*Hear it. Understand it.*
