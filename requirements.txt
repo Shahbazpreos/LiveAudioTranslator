@@ -1,0 +1,11 @@
+arabic-reshaper==3.0.1
+faster-whisper==1.2.1
+numpy==2.5.2
+pillow==12.3.0
+pynput==1.8.2
+pystray==0.19.5
+python-bidi==0.6.11
+scipy==1.18.1
+SoundCard==0.4.6
+torch==2.13.0
+transformers==5.16.1
